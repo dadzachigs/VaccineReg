@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "341764140097",
+    "project_id": "vaccireg-a62a8",
+    "storage_bucket": "vaccireg-a62a8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341764140097:android:dc625984e2f7721454aac0",
+        "android_client_info": {
+          "package_name": "co.zw.trigonsolutes.vaccinereg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "341764140097-js4r73ete7foiofa396lh1dk4e0bgojt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXMvT1UCG_-QQRyt99n2t5_CU1ndymPKs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "341764140097-js4r73ete7foiofa396lh1dk4e0bgojt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
