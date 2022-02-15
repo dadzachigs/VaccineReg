@@ -2,6 +2,7 @@ package co.zw.trigonsolutes.vaccinereg.bookings;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,14 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,9 +33,14 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.BookingV
         private ArrayList<BookingsModel> bookingResponses;
 
 
+    /*public BookingAdapter(  @NonNull FirebaseRecyclerOptions<BookingsModel> options) {
+
+        super(options);
 
 
-    public BookingAdapter( Context context, ArrayList<BookingsModel> BookingsModel) {
+    }*/
+
+   public BookingAdapter( Context context, ArrayList<BookingsModel> BookingsModel) {
         this.context = context;
         this.bookingResponses = BookingsModel;
 
@@ -35,17 +49,6 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.BookingV
 
 
 
-    @NonNull
-    @Override
-    public BookingAdapter.BookingViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
-    {
-        context=parent.getContext();
-
-
-       View v= LayoutInflater.from(context).inflate(R.layout.results_list,parent,false);
-
-       return new BookingViewHolder(v);
-    }
 
 
     @Override
@@ -55,22 +58,39 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.BookingV
 
         BookingsModel incomingData = bookingResponses.get(position);
 
-        String centerName = incomingData.getVaccCenter();
-        //String date = incomingData.getDate();
-        String id = incomingData.getId();
 
-            holder.textViewName.setText(centerName);
-            holder.textViewDate.setText(incomingData.getDate());
-            holder.textViewResult.setText(id);
+            holder.textViewName.setText(incomingData.getRegCenter());
+            holder.textViewDate.setText(incomingData.getRegDate());
+
 
 
     }
 
+   /* @Override
+    protected void onBindViewHolder(@NonNull BookingViewHolder holder, int position, @NonNull BookingsModel bookingsModel) {
+
+        holder.textViewName.setText(bookingsModel.getRegCenter());
+        holder.textViewDate.setText(bookingsModel.getRegDate());
+        holder.warning2.setText(bookingsModel.getUId());
+    }*/
+
+
+    @NonNull
+    @Override
+    public BookingAdapter.BookingViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
+    {
+
+        View v= LayoutInflater.from(context).inflate(R.layout.results_list,parent,false);
+
+        return new BookingViewHolder(v);
+    }
     @Override
     public int getItemCount()
     {
         return bookingResponses.size();
     }
+
+
 
 
 

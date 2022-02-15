@@ -26,19 +26,19 @@
                     />
 
                 <item
-                    android:id="@+id/test_reults"
-                    android:title="Test Results"
+                    android:id="@+id/book"
+                    android:title="Book"
                     android:icon="@drawable/ic_baseline_home_24"
                     />
                 <item
-                    android:id="@+id/test_listing"
-                    android:title="Test Listing"
+                    android:id="@+id/bookings"
+                    android:title="My Bookings"
                     android:icon="@drawable/ic_baseline_home_24"
                     />
 
                 <item
-                    android:id="@+id/sample_request"
-                    android:title="Sample Request"
+                    android:id="@+id/feeds"
+                    android:title="News Feed"
                     android:icon="@drawable/ic_baseline_home_24"
                     android:visible="true"
                     />

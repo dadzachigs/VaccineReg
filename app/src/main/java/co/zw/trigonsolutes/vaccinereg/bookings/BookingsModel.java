@@ -2,42 +2,40 @@ package co.zw.trigonsolutes.vaccinereg.bookings;
 
 public class BookingsModel {
 
-    public String date;
-    public String id;
-    public String vaccCenter;
-
+    private String regDate;
+    private  String UId;
+    private String regCenter;
 
     public BookingsModel() {
     }
 
-    public BookingsModel(String date, String id, String vaccCenter) {
-        this.date = date;
-        this.id = id;
-        this.vaccCenter = vaccCenter;
+    public BookingsModel(String regDate, String uId, String regCenter) {
+        this.regDate = regDate;
+        this.UId = uId;
+        this.regCenter = regCenter;
     }
 
-    public String getDate() {
-        return date;
+    public String getRegDate() {
+        return regDate;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setRegDate(String regDate) {
+        this.regDate = regDate;
     }
 
-    public String getId() {
-        return id;
+    public String getUId() {
+        return UId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setUId(String UId) {
+        this.UId = UId;
     }
 
-    public String getVaccCenter() {
-        return vaccCenter;
+    public String getRegCenter() {
+        return regCenter;
     }
 
-    public void setVaccCenter(String vaccCenter) {
-        this.vaccCenter = vaccCenter;
+    public void setRegCenter(String regCenter) {
+        this.regCenter = regCenter;
     }
-
 }

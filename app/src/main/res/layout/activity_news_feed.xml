@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightgrayline"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:orientation="vertical">
+
+    <Toolbar
+
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/deep_blue"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarWidgetTheme"
+
+        app:popupTheme="@style/AppTheme"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark"  >
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/back_arrow"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/who_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="News Articles"
+                android:layout_centerVertical="true"
+                android:textSize="18sp"
+                android:layout_centerHorizontal="true"
+                />
+
+
+
+        </RelativeLayout>
+
+
+
+
+    </Toolbar>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="10dp">
+
+
+
+        />
+
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            >
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cancer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="4dp"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="16dp" >
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/tittle_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:ellipsize="end"
+                        android:text="Zimbabwe Ranked top in managing covid-19"
+
+
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                    <ImageView
+                        android:id="@+id/articl_pic"
+                        android:layout_width="match_parent"
+                        android:layout_height="164dp"
+                        android:src="@drawable/ranking"
+                        android:layout_marginTop="6dp"
+                        android:layout_below="@+id/tittle_tv"/>
+                    <TextView
+                        android:id="@+id/description_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/articl_pic"
+                        android:layout_marginTop="6dp"
+                        android:textColor="@color/deep_blue"
+                        android:text="Extracted From: The National Cancer Prevention And Control Strategy For Zimbabwe 2013-2017" />
+
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/bp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="4dp"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="16dp" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+
+                    >
+
+
+
+
+                    <TextView
+                        android:id="@+id/tittle_article3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:ellipsize="end"
+                        android:text="World Covid-19 cases soaring"
+
+
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                    <ImageView
+                        android:id="@+id/articl_pic3"
+                        android:layout_width="match_parent"
+                        android:layout_height="164dp"
+                        android:src="@drawable/globalcases"
+                        android:layout_marginTop="6dp"
+                        android:layout_below="@+id/tittle_article3"/>
+                    <TextView
+                        android:id="@+id/description_tittle3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/articl_pic3"
+                        android:layout_marginTop="6dp"
+                        android:textColor="@color/deep_blue"
+                        android:text="Article By: Murungu Musa" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/recoveries"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="4dp"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="16dp" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+
+                    >
+                    <TextView
+                        android:id="@+id/tittle_article2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:ellipsize="end"
+                        android:text="There is no fair access to vaccines"
+
+
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                    <ImageView
+                        android:id="@+id/articl_pic2"
+                        android:layout_width="match_parent"
+                        android:layout_height="164dp"
+                        android:src="@drawable/vacinedistribution"
+                        android:layout_marginTop="6dp"
+                        android:layout_below="@+id/tittle_article2"/>
+                    <TextView
+                        android:id="@+id/description_tittle2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/articl_pic2"
+                        android:layout_marginTop="6dp"
+                        android:textColor="@color/deep_blue"
+                        android:text="Article By: Murungu Musa" />
+
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

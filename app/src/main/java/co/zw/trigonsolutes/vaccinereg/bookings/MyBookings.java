@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,8 +26,8 @@ public class MyBookings extends AppCompatActivity {
     private ArrayList<BookingsModel> bookingResponses;
     private BookingAdapter myAdapter;
     private FirebaseDatabase db = FirebaseDatabase.getInstance();
-    private DatabaseReference root = db.getReference().child("Vaccination Centers").child("Gweru");
-
+    private DatabaseReference root;
+    private String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +40,22 @@ public class MyBookings extends AppCompatActivity {
 
         bookingResponses= new ArrayList<>();
 
+        userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+       root = db.getReference().child("Vaccination Centers").child("Gweru");
+
+       /* FirebaseRecyclerOptions<BookingsModel> options= new FirebaseRecyclerOptions.Builder<BookingsModel>()
+                        .setQuery(root,BookingsModel.class)
+                        .build();*/
+
+        //myAdapter= new BookingAdapter(options);
+        //recyclerView.setAdapter(myadapter);
+
         myAdapter = new BookingAdapter(this, bookingResponses);
         recyclerView.setAdapter(myAdapter);
 
 
-        root.addValueEventListener(new ValueEventListener() {
+       root.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot ds: snapshot.getChildren()){
@@ -62,4 +75,6 @@ public class MyBookings extends AppCompatActivity {
 
 
     }
+
+
 }

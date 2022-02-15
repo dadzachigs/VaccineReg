@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.VaccineReg">
-        <activity android:name=".bookings.MyBookings"></activity>
+        <activity android:name=".NewsFeed.ArticleFirst"></activity>
+        <activity android:name=".NewsFeed.NewsFeed" />
+        <activity android:name=".bookings.MyBookings" />
         <activity android:name=".booking.BookVaccine" />
         <activity android:name=".userAuth.SignUp" />
         <activity android:name=".userAuth.LogIn" />

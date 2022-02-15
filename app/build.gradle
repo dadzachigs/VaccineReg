@@ -168,6 +168,9 @@ dependencies {
     implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
 
 
+
+    implementation 'com.firebaseui:firebase-ui-database:4.3.2'
+
     repositories {
         maven { url "https://jitpack.io" }
         maven { url "http://release.netmera.com/release/android" }

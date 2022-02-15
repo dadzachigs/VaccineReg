@@ -18,6 +18,8 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 import com.jaredrummler.materialspinner.MaterialSpinner;
 
@@ -39,9 +41,9 @@ public class BookVaccine extends AppCompatActivity {
     private Button btnRegister;
     private String[] genderArr = {"PARIRENYATWA", "HUTANO CENTER", "Gweru", "Machach"};
     final Calendar myCalendar = Calendar.getInstance();
-    private String dob;
+
     private static final String FILE_NAME = "example.txt";
-    public  String text,name;
+    public  FirebaseAuth UId;
 
 
     @Override
@@ -72,6 +74,8 @@ public class BookVaccine extends AppCompatActivity {
         txtIdNum = findViewById(R.id.txtIdNum);
         txtMsisdn = findViewById(R.id.txtMsisdn);
         btnRegister = findViewById(R.id.button_sign_up);
+
+
 
 
         txtDob2.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -165,11 +169,20 @@ public class BookVaccine extends AppCompatActivity {
             validateId();
         }
 
+        UId  = FirebaseAuth.getInstance();
+        UId.getCurrentUser();
+
+        FirebaseUser mUser =UId.getCurrentUser();
+
+        String mUserUid = mUser.getUid();
+
         HashMap<String, Object> map = new HashMap<>();
-        map.put("Gender",gender );
-        map.put("ID Number",natId );
-        map.put("Phone Number", phone);
-        map.put("DOB",dob);
+        map.put("gender",gender );
+        map.put("idNum",natId );
+        map.put("phoneNum", phone);
+        map.put("regDate",dob);
+        map.put("regCenter",centers);
+
 
         FirebaseDatabase.getInstance().getReference().child("Vaccination Centers").child(centers).child(firstName + ""+ lastName)
         .updateChildren(map).addOnCompleteListener(new OnCompleteListener<Void>() {
